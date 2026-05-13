@@ -10,9 +10,9 @@ export default function Study({ pool, cards, onMark, onExit, onComplete }) {
 
   const currentCard = cards.find((c) => c.id === extendedPool[index]);
 
-  const advance = (newPool = extendedPool, newIndex = index + 1) => {
+  const advance = (newPool = extendedPool, newIndex = index + 1, currentStats = stats) => {
     if (newIndex >= newPool.length) {
-      onComplete(stats);
+      onComplete(currentStats);
       return;
     }
     setExtendedPool(newPool);
@@ -28,11 +28,12 @@ export default function Study({ pool, cards, onMark, onExit, onComplete }) {
       newPool = [...extendedPool, currentCard.id];
       setRescheduled((s) => new Set(s).add(currentCard.id));
     }
-    setStats((s) => ({
-      learned: s.learned + (status === 'known' ? 1 : 0),
-      practice: s.practice + (status === 'practice' ? 1 : 0),
-    }));
-    advance(newPool);
+    const newStats = {
+      learned: stats.learned + (status === 'known' ? 1 : 0),
+      practice: stats.practice + (status === 'practice' ? 1 : 0),
+    };
+    setStats(newStats);
+    advance(newPool, index + 1, newStats);
   };
 
   const handleSkip = () => advance();
