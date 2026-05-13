@@ -1,8 +1,8 @@
 export const topics = {
-  etiquette: { label: 'Etiquette & veiligheid', color: '#2e7d32' },
-  baanregels: { label: 'Baanregels', color: '#1565c0' },
-  straf: { label: 'Strafslagen & procedures', color: '#c62828' },
-  handicap: { label: 'Handicap & scorekaart', color: '#6a1b9a' },
+  etiquette: { label: 'Etiquette & veiligheid', color: '#81c784' },
+  baanregels: { label: 'Baanregels', color: '#64b5f6' },
+  straf: { label: 'Strafslagen & procedures', color: '#ef5350' },
+  handicap: { label: 'Handicap & scorekaart', color: '#ba68c8' },
 };
 
 export const flashcards = [
