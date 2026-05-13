@@ -97,4 +97,107 @@ export const flashcards = [
     front: 'Wat is de regel voor schaduw op de green?',
     back: 'Zorg dat je schaduw niet over de bal of puttinglijn van een medespeler valt terwijl hij/zij put. Ga indien nodig opzij staan.'
   },
+  // ─── Baanregels ───────────────────────────────────────────
+  {
+    id: 'baan-01',
+    topic: 'baanregels',
+    front: 'Wat betekenen rode palen of lijnen langs een hindernis?',
+    back: 'Een laterale hindernis (rode hindernis). Je krijgt extra ontwijkopties: binnen 2 stoklengtes van waar de bal de rand kruiste, of aan de overkant op gelijke afstand.'
+  },
+  {
+    id: 'baan-02',
+    topic: 'baanregels',
+    front: 'Wat betekenen gele palen of lijnen?',
+    back: 'Een gele hindernis (sinds 2019: gele penalty-area). Ontwijken: 1 strafslag, en droppen op de lijn tussen vlag en het punt waar de bal het laatst de rand kruiste, zo ver achter als je wilt.'
+  },
+  {
+    id: 'baan-03',
+    topic: 'baanregels',
+    front: 'Wat betekenen witte palen?',
+    back: 'Out of bounds (buiten de baan). Je mag daar niet spelen. Sla je hem out: 1 strafslag en sla opnieuw vanaf de plek van je vorige slag (slag-en-afstand).'
+  },
+  {
+    id: 'baan-04',
+    topic: 'baanregels',
+    front: 'Hoe lang mag je zoeken naar een verloren bal?',
+    back: '3 minuten (regelwijziging 2019, was 5). Daarna is de bal verloren en moet je teruggaan onder slag-en-afstand (1 strafslag).'
+  },
+  {
+    id: 'baan-05',
+    topic: 'baanregels',
+    front: 'Hoe drop je een bal volgens de regels sinds 2019?',
+    back: 'Vanaf kniehoogte (eerder schouderhoogte). De bal moet vallen in en blijven liggen in de ontwijkzone.'
+  },
+  {
+    id: 'baan-06',
+    topic: 'baanregels',
+    front: 'Wat is de ontwijkzone bij ontwijken van een abnormaal terrein (bv. casual water)?',
+    back: 'Eén stoklengte vanaf het dichtstbijzijnde punt van volledige ontwijking, niet dichter bij de hole, zonder strafslag.'
+  },
+  {
+    id: 'baan-07',
+    topic: 'baanregels',
+    front: 'Mag je in een bunker je club laten rusten op het zand voor je slag?',
+    back: 'Nee. Je mag de grond in de bunker niet aanraken met je club voor de slag (oefenswing of plaatsen). Wel mag je leunend op je club staan buiten de bunker.'
+  },
+  {
+    id: 'baan-08',
+    topic: 'baanregels',
+    front: 'Mag je losse natuurlijke voorwerpen (blad, takje) wegnemen in een bunker?',
+    back: 'Ja, sinds 2019. Losse natuurlijke voorwerpen mag je overal verwijderen, ook in bunkers en penalty-areas, zolang je bal niet beweegt.'
+  },
+  {
+    id: 'baan-09',
+    topic: 'baanregels',
+    front: 'Mag de vlaggenstok in de hole blijven staan tijdens het putten?',
+    back: 'Ja, sinds 2019. Je krijgt geen straf meer als je bal de stok raakt vanaf de green.'
+  },
+  {
+    id: 'baan-10',
+    topic: 'baanregels',
+    front: 'Wat doe je als je bal op de green ligt en je wil hem oppakken om te merken?',
+    back: 'Markeer eerst (muntje/marker direct achter de bal), pak hem op, en leg hem op exact dezelfde plek terug voor je slag.'
+  },
+  {
+    id: 'baan-11',
+    topic: 'baanregels',
+    front: 'Mag je een geweerd kuiltje (oude pitchmark of green-imperfectie) op je puttinglijn repareren?',
+    back: 'Ja, sinds 2019 mag je alle schade op de green repareren (pitchmarks, spike marks, dierschade), behalve natuurlijke imperfecties.'
+  },
+  {
+    id: 'baan-12',
+    topic: 'baanregels',
+    front: 'Wat is "ground under repair" (GUR)?',
+    back: 'Een door de commissie gemarkeerd gebied (vaak wit gemarkeerd of \'GUR\'-bord) waaruit je gratis mag ontwijken. Eén stoklengte, niet dichter bij de hole.'
+  },
+  {
+    id: 'baan-13',
+    topic: 'baanregels',
+    front: 'Wat is een immovable obstruction?',
+    back: 'Een vast kunstmatig voorwerp (sproeierdeksel, paaltje, schuilhut). Gratis ontwijken: dichtstbijzijnde punt van volledige ontwijking + één stoklengte, niet dichter bij de hole.'
+  },
+  {
+    id: 'baan-14',
+    topic: 'baanregels',
+    front: 'Wat doe je als je bal in een waterhindernis (gele penalty-area) ligt?',
+    back: 'Drie opties: (1) spelen zoals hij ligt, (2) slag-en-afstand met strafslag, (3) op de lijn vlag-kruisingspunt droppen met 1 strafslag.'
+  },
+  {
+    id: 'baan-15',
+    topic: 'baanregels',
+    front: 'Wat is een "preferred lie" of "winterregel"?',
+    back: 'Plaatselijke regel: op de fairway mag je de bal binnen een vastgestelde afstand (vaak 15 cm) verplaatsen om bescherming van de baan in winterperiode. Geen straf.'
+  },
+  {
+    id: 'baan-16',
+    topic: 'baanregels',
+    front: 'Mag je een bal identificeren door hem op te pakken in de rough?',
+    back: 'Ja, na markeren mag je hem oppakken om te identificeren. Daarna terugleggen op exact dezelfde plek. Geen straf als de procedure correct is.'
+  },
+  {
+    id: 'baan-17',
+    topic: 'baanregels',
+    front: 'Wat is de "back-on-the-line" ontwijkprocedure?',
+    back: 'Droppen op de denkbeeldige lijn van vlag door de plek waar je bal de rand kruiste/lag, zo ver achter als je wilt. Ontwijkzone: 1 stoklengte vanaf het gekozen referentiepunt.'
+  },
 ];
