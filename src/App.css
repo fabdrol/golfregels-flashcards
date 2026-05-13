@@ -183,3 +183,32 @@ body {
 .btn--known { background: #2e7d32; color: white; }
 .btn--practice { background: #ef6c00; color: white; }
 .btn--skip { background: transparent; color: #6b7a8e; border: 1px solid #cbd3dd; }
+.done {
+  text-align: center;
+  padding-top: 2rem;
+}
+.done__title {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+.done__stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.done__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.done__stat-num {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1565c0;
+}
+.done__stat-label {
+  font-size: 0.9rem;
+  color: #6b7a8e;
+  margin-top: 0.25rem;
+}
