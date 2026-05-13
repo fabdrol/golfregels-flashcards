@@ -200,4 +200,174 @@ export const flashcards = [
     front: 'Wat is de "back-on-the-line" ontwijkprocedure?',
     back: 'Droppen op de denkbeeldige lijn van vlag door de plek waar je bal de rand kruiste/lag, zo ver achter als je wilt. Ontwijkzone: 1 stoklengte vanaf het gekozen referentiepunt.'
   },
+  // ─── Strafslagen & procedures ─────────────────────────────
+  {
+    id: 'straf-01',
+    topic: 'straf',
+    front: 'Hoeveel strafslagen krijg je als je bal out of bounds gaat?',
+    back: '1 strafslag. Je speelt opnieuw vanaf de plek van je vorige slag (slag-en-afstand). De slag + de strafslag betekent dat je effectief 2 slagen verliest.'
+  },
+  {
+    id: 'straf-02',
+    topic: 'straf',
+    front: 'Wat is een provisional bal en wanneer speel je er een?',
+    back: 'Een voorlopige bal die je speelt als je vermoedt dat je bal verloren of OB is (niet in een penalty-area). Bespaart tijd. Kondig duidelijk aan: "Ik speel een provisional".'
+  },
+  {
+    id: 'straf-03',
+    topic: 'straf',
+    front: 'Wat is een onspeelbare bal en hoeveel strafslagen kost dat?',
+    back: 'Je verklaart zelf dat je bal onspeelbaar is — overal op de baan behalve in een penalty-area. 1 strafslag. Drie opties: slag-en-afstand, back-on-the-line, of 2 stoklengtes niet dichter bij de hole.'
+  },
+  {
+    id: 'straf-04',
+    topic: 'straf',
+    front: 'Wat is de straf als je de verkeerde bal speelt?',
+    back: '2 strafslagen in strokeplay (verlies van hole in matchplay). Daarna moet je de juiste bal spelen. Slagen met de verkeerde bal tellen niet.'
+  },
+  {
+    id: 'straf-05',
+    topic: 'straf',
+    front: 'Wat is de straf als je bal je eigen lichaam, uitrusting of caddie raakt?',
+    back: 'Sinds 2019: geen straf meer. Je speelt de bal waar hij ligt. Voor 2019 was dit 1 of 2 strafslagen.'
+  },
+  {
+    id: 'straf-06',
+    topic: 'straf',
+    front: 'Wat gebeurt er als je per ongeluk je bal beweegt tijdens het zoeken?',
+    back: 'Sinds 2019: geen straf. Leg de bal terug op zijn oorspronkelijke plek (geschat als nodig).'
+  },
+  {
+    id: 'straf-07',
+    topic: 'straf',
+    front: 'Hoeveel slagen heb je gespeeld na een mulligan op hole 1 die niemand telt?',
+    back: 'Strikt regeltechnisch: een mulligan is geen officiële regel. In een wedstrijd of qualifying ronde mag het niet — dan is de eerste slag de slag.'
+  },
+  {
+    id: 'straf-08',
+    topic: 'straf',
+    front: 'Wat is "general penalty"?',
+    back: 'De standaardstraf voor de meeste overtredingen sinds 2019: 2 strafslagen in strokeplay, verlies van hole in matchplay.'
+  },
+  {
+    id: 'straf-09',
+    topic: 'straf',
+    front: 'Mag je je bal schoonmaken na opnemen op de fairway?',
+    back: 'Alleen als de regel het toestaat. Bij ontwijken van abnormale terreinomstandigheden of vrije drop: ja. Bij identificeren in rough: alleen voor zover nodig om te identificeren.'
+  },
+  {
+    id: 'straf-10',
+    topic: 'straf',
+    front: 'Wat doe je als je niet zeker weet of een bal van jou is in de rough?',
+    back: 'Markeer de plek, pak op om te identificeren. Niet zonder markeren oppakken. Als blijkt dat het toch niet jouw bal is, leg dezelfde bal terug en zoek verder.'
+  },
+  {
+    id: 'straf-11',
+    topic: 'straf',
+    front: 'Wat is de straf voor te veel clubs in je tas (>14)?',
+    back: '2 strafslagen per overtreden hole, met maximum van 4 strafslagen per ronde in strokeplay. In matchplay: aftrek van 1 hole per overtreden hole, max 2 holes.'
+  },
+  {
+    id: 'straf-12',
+    topic: 'straf',
+    front: 'Mag je advies vragen tijdens een ronde?',
+    back: 'Alleen aan je caddie of partner (in foursomes/vierbal). Aan tegenstanders/medespelers: 2 strafslagen. Vragen naar "publieke" informatie (afstanden uit een boekje) mag wel.'
+  },
+  {
+    id: 'straf-13',
+    topic: 'straf',
+    front: 'Wat is de procedure als je bal in een boom blijft hangen en je hem niet kunt identificeren?',
+    back: 'De bal is verloren (kan niet aantonen dat het jouw bal is). Slag-en-afstand: 1 strafslag, opnieuw spelen vanaf vorige plek.'
+  },
+  // ─── Handicap & scorekaart ────────────────────────────────
+  {
+    id: 'hcp-01',
+    topic: 'handicap',
+    front: 'Wat is een handicap?',
+    back: 'Een getal dat aangeeft hoeveel slagen een speler boven par speelt op een gemiddelde ronde. Hoe lager, hoe beter. Sinds 2021: World Handicap System (WHS).'
+  },
+  {
+    id: 'hcp-02',
+    topic: 'handicap',
+    front: 'Wat is het verschil tussen handicap index en playing handicap?',
+    back: 'Handicap index is je persoonlijke getal (bv. 18,5). Playing handicap is wat je op een specifieke baan krijgt, berekend met course rating, slope en par.'
+  },
+  {
+    id: 'hcp-03',
+    topic: 'handicap',
+    front: 'Wat betekent slope rating?',
+    back: 'Maat voor moeilijkheid van een baan voor een bogey-speler t.o.v. een scratch-speler. Gemiddelde slope = 113. Hogere slope = relatief moeilijker voor minder ervaren spelers.'
+  },
+  {
+    id: 'hcp-04',
+    topic: 'handicap',
+    front: 'Wat is course rating?',
+    back: 'De verwachte score van een scratch-speler op de baan onder normale omstandigheden. Bijv. 71,2 — dichtbij par maar net iets makkelijker of moeilijker.'
+  },
+  {
+    id: 'hcp-05',
+    topic: 'handicap',
+    front: 'Hoe wordt playing handicap berekend?',
+    back: 'Playing Handicap = Handicap Index × (Slope / 113) + (Course Rating − Par). Afgerond op heel getal. Dit is het aantal extra slagen dat je krijgt.'
+  },
+  {
+    id: 'hcp-06',
+    topic: 'handicap',
+    front: 'Wat is stableford?',
+    back: 'Scoresysteem waarbij je punten krijgt: bogey net = 1, par net = 2, birdie net = 3, eagle net = 4, dubbelbogey of slechter = 0. "Net" = na aftrek van je handicapslagen op die hole.'
+  },
+  {
+    id: 'hcp-07',
+    topic: 'handicap',
+    front: 'Hoeveel stableford-punten heb je als je par speelt op een hole waar je 1 handicapslag krijgt?',
+    back: '3 punten. Je netto score is birdie (par − 1 slag), wat 3 stableford-punten oplevert.'
+  },
+  {
+    id: 'hcp-08',
+    topic: 'handicap',
+    front: 'Welke holes krijg je extra slagen op?',
+    back: 'Op de holes met de laagste stroke index (SI). SI 1 is de moeilijkste hole, SI 18 de makkelijkste. Bij playing handicap 9 krijg je dus slagen op SI 1 t/m 9.'
+  },
+  {
+    id: 'hcp-09',
+    topic: 'handicap',
+    front: 'Wat is een "qualifying" kaart?',
+    back: 'Een ronde gespeeld onder competitievoorwaarden (volgens regels, met marker, op gequalificeerde baan) die meetelt voor je handicap. Tegenwoordig kan dat ook in een Exact Daily Score (EDS) ronde zijn.'
+  },
+  {
+    id: 'hcp-10',
+    topic: 'handicap',
+    front: 'Wie moet een scorekaart ondertekenen?',
+    back: 'De speler en de marker (medespeler die de score noteerde). Beide handtekeningen voor inlevering. Onjuiste/niet-ondertekende kaart = diskwalificatie.'
+  },
+  {
+    id: 'hcp-11',
+    topic: 'handicap',
+    front: 'Wat gebeurt er als je een te lage score op een hole noteert?',
+    back: 'Diskwalificatie. Bij een te hoge score: die hogere score blijft staan, geen DSQ. Daarom: liever wat hoger noteren bij twijfel.'
+  },
+  {
+    id: 'hcp-12',
+    topic: 'handicap',
+    front: 'Wat is een buffer en is die er nog?',
+    back: 'Onder het oude EGA-systeem (vóór WHS 2021) was er een buffer: bij scores rond je handicap ging je niet omhoog. Onder WHS is er geen buffer meer — je 8 laagste van laatste 20 ronden bepalen je index.'
+  },
+  {
+    id: 'hcp-13',
+    topic: 'handicap',
+    front: 'Wat is de maximale score per hole onder WHS voor handicap-doeleinden?',
+    back: 'Net double bogey: par + 2 + handicapslagen op die hole. Hogere scores worden voor de handicapberekening teruggebracht tot deze waarde.'
+  },
+  {
+    id: 'hcp-14',
+    topic: 'handicap',
+    front: 'Wat zijn de "geel/wit/rood/blauw" gemarkeerde tees?',
+    back: 'Verschillende afslagplaatsen met verschillende lengte. Traditioneel: wit = heren wedstrijd, geel = heren dagelijks, rood = dames, blauw = back-tees (kampioenschap). Elk heeft eigen course/slope rating.'
+  },
+  {
+    id: 'hcp-15',
+    topic: 'handicap',
+    front: 'Wat is de hoogste handicap waarmee je het GVB haalt?',
+    back: 'Het GVB wordt verleend bij handicap 54 of lager (sinds 2021). Daarmee mag je qualifying rondes spelen en is je handicap erkend.'
+  },
 ];
