@@ -18,6 +18,16 @@ npm run build
 npm run preview
 ```
 
+## Deployen
+
+```bash
+./deploy.sh
+```
+
+Bouwt, synct naar `s3://video.superyachtapi.com/golf/` (profiel `syt`) en
+triggert een CloudFront-invalidation. Live op
+<https://video.superyachtapi.com/golf/>.
+
 ## Onderwerpen
 
 - Etiquette & veiligheid
