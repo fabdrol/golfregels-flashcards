@@ -1,6 +1,9 @@
-import { topics, flashcards } from '../data/flashcards.js';
-
 export default function Home({
+  mode,
+  onModeChange,
+  modes,
+  topics,
+  cards,
   selectedTopics,
   onToggleTopic,
   onStart,
@@ -11,26 +14,43 @@ export default function Home({
   const topicIds = Object.keys(topics);
 
   const stats = topicIds.reduce((acc, id) => {
-    const cards = flashcards.filter((c) => c.topic === id);
-    const known = cards.filter((c) => progress[c.id] === 'known').length;
-    const practice = cards.filter((c) => progress[c.id] === 'practice').length;
-    acc[id] = { total: cards.length, known, practice };
+    const topicCards = cards.filter((c) => c.topic === id);
+    const known = topicCards.filter((c) => progress[c.id] === 'known').length;
+    const practice = topicCards.filter((c) => progress[c.id] === 'practice').length;
+    acc[id] = { total: topicCards.length, known, practice };
     return acc;
   }, {});
 
-  const selectedCount = flashcards.filter((c) =>
-    selectedTopics.has(c.topic)
-  ).length;
+  const selectedCount = cards.filter((c) => selectedTopics.has(c.topic)).length;
 
   const handleReset = () => {
-    if (window.confirm('Weet je zeker dat je alle voortgang wilt wissen?')) {
+    const label = modes[mode].label;
+    if (window.confirm(`Weet je zeker dat je alle voortgang van "${label}" wilt wissen?`)) {
       onReset();
     }
   };
 
+  const modeIds = Object.keys(modes);
+
   return (
     <div className="home">
       <h1>GVB Oefenen</h1>
+
+      <div className="mode-switch" role="tablist" aria-label="Studie-modus">
+        {modeIds.map((id) => (
+          <button
+            key={id}
+            type="button"
+            role="tab"
+            aria-selected={mode === id}
+            className={`mode-switch__btn ${mode === id ? 'mode-switch__btn--active' : ''}`}
+            onClick={() => onModeChange(id)}
+          >
+            {modes[id].label}
+          </button>
+        ))}
+      </div>
+
       <p className="home__intro">
         Kies één of meer onderwerpen en start een oefensessie.
       </p>

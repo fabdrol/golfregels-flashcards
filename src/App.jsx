@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { flashcards, topics } from './data/flashcards.js';
+import { jargonCards, jargonTopics } from './data/jargon.js';
 import { useProgress } from './hooks/useProgress.js';
 import Home from './components/Home.jsx';
 import Study from './components/Study.jsx';
@@ -14,28 +15,51 @@ function shuffle(arr) {
   return out;
 }
 
+const MODES = {
+  gvb: {
+    label: 'GVB-vragen',
+    cards: flashcards,
+    topics: topics,
+    storageKey: 'golfregels.progress.v1',
+  },
+  jargon: {
+    label: 'Jargon',
+    cards: jargonCards,
+    topics: jargonTopics,
+    storageKey: 'golfregels.jargon.v1',
+  },
+};
+
 export default function App() {
   const [view, setView] = useState('home');
-  const [selectedTopics, setSelectedTopics] = useState(
-    () => new Set(Object.keys(topics))
-  );
+  const [mode, setMode] = useState('gvb');
+  const [selectedTopics, setSelectedTopics] = useState(() => ({
+    gvb: new Set(Object.keys(topics)),
+    jargon: new Set(Object.keys(jargonTopics)),
+  }));
   const [pool, setPool] = useState([]);
   const [doneStats, setDoneStats] = useState({ learned: 0, practice: 0 });
 
-  const { progress, mark, reset, storageAvailable } = useProgress('golfregels.progress.v1');
+  const gvbProgress = useProgress(MODES.gvb.storageKey);
+  const jargonProgress = useProgress(MODES.jargon.storageKey);
+  const progressByMode = { gvb: gvbProgress, jargon: jargonProgress };
+
+  const activeMode = MODES[mode];
+  const activeProgress = progressByMode[mode];
+  const activeSelected = selectedTopics[mode];
 
   const toggleTopic = (id) => {
     setSelectedTopics((prev) => {
-      const next = new Set(prev);
+      const next = new Set(prev[mode]);
       if (next.has(id)) next.delete(id);
       else next.add(id);
-      return next;
+      return { ...prev, [mode]: next };
     });
   };
 
   const startSession = () => {
-    const ids = flashcards
-      .filter((c) => selectedTopics.has(c.topic))
+    const ids = activeMode.cards
+      .filter((c) => activeSelected.has(c.topic))
       .map((c) => c.id);
     if (ids.length === 0) return;
     setPool(shuffle(ids));
@@ -43,8 +67,8 @@ export default function App() {
   };
 
   const startPracticeAgain = () => {
-    const practiceIds = Object.keys(progress).filter(
-      (id) => progress[id] === 'practice'
+    const practiceIds = Object.keys(activeProgress.progress).filter(
+      (id) => activeProgress.progress[id] === 'practice'
     );
     if (practiceIds.length === 0) return;
     setPool(shuffle(practiceIds));
@@ -58,25 +82,32 @@ export default function App() {
 
   const goHome = () => setView('home');
 
-  const hasPractice = Object.values(progress).some((s) => s === 'practice');
+  const hasPractice = Object.values(activeProgress.progress).some(
+    (s) => s === 'practice'
+  );
 
   return (
     <div className="app">
       {view === 'home' && (
         <Home
-          selectedTopics={selectedTopics}
+          mode={mode}
+          onModeChange={setMode}
+          modes={MODES}
+          topics={activeMode.topics}
+          cards={activeMode.cards}
+          selectedTopics={activeSelected}
           onToggleTopic={toggleTopic}
           onStart={startSession}
-          progress={progress}
-          onReset={reset}
-          storageAvailable={storageAvailable}
+          progress={activeProgress.progress}
+          onReset={activeProgress.reset}
+          storageAvailable={activeProgress.storageAvailable}
         />
       )}
       {view === 'study' && (
         <Study
           pool={pool}
-          cards={flashcards}
-          onMark={mark}
+          cards={activeMode.cards}
+          onMark={activeProgress.mark}
           onExit={goHome}
           onComplete={completeSession}
         />
