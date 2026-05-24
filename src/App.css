@@ -302,3 +302,62 @@ body {
 .mode-switch__btn--active:hover {
   color: var(--warning-text);
 }
+
+/* ─── Related jargon (collapsible) ─────────────────────── */
+.jargon-details {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.jargon-details__summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  list-style: none;
+  user-select: none;
+}
+.jargon-details__summary::-webkit-details-marker { display: none; }
+.jargon-details__summary::before {
+  content: '▸';
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.25rem;
+  color: var(--accent);
+}
+.jargon-details[open] .jargon-details__summary::before {
+  content: '▾';
+}
+.jargon-details__summary:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.jargon-details__list {
+  margin: 0;
+  padding: 0 1rem;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+.jargon-details__item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.jargon-details__item:last-child {
+  border-bottom: none;
+}
+.jargon-details__term {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.jargon-details__def {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
