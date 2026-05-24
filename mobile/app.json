@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "GVB Oefenen",
+    "slug": "gvb-oefenen",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "gvboefenen",
+    "userInterfaceStyle": "dark",
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0d1f15",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cefab.gvboefenen"
+    },
+    "android": {
+      "package": "com.cefab.gvboefenen",
+      "adaptiveIcon": {
+        "backgroundColor": "#2F9E5A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
