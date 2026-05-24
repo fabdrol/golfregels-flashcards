@@ -1,10 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 
-const STORAGE_KEY = 'golfregels.progress.v1';
-
-function readStorage() {
+function readStorage(key) {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(key);
     if (!raw) return {};
     const parsed = JSON.parse(raw);
     return typeof parsed === 'object' && parsed !== null ? parsed : {};
@@ -13,17 +11,17 @@ function readStorage() {
   }
 }
 
-function writeStorage(data) {
+function writeStorage(key, data) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(key, JSON.stringify(data));
     return true;
   } catch {
     return false;
   }
 }
 
-export function useProgress() {
-  const [progress, setProgress] = useState(() => readStorage());
+export function useProgress(storageKey) {
+  const [progress, setProgress] = useState(() => readStorage(storageKey));
   const [storageAvailable, setStorageAvailable] = useState(true);
 
   useEffect(() => {
@@ -39,19 +37,19 @@ export function useProgress() {
   const mark = useCallback((cardId, status) => {
     setProgress((prev) => {
       const next = { ...prev, [cardId]: status };
-      writeStorage(next);
+      writeStorage(storageKey, next);
       return next;
     });
-  }, []);
+  }, [storageKey]);
 
   const reset = useCallback(() => {
     setProgress({});
     try {
-      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(storageKey);
     } catch {
       // ignore
     }
-  }, []);
+  }, [storageKey]);
 
   return { progress, mark, reset, storageAvailable };
 }

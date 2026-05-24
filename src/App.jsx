@@ -22,7 +22,7 @@ export default function App() {
   const [pool, setPool] = useState([]);
   const [doneStats, setDoneStats] = useState({ learned: 0, practice: 0 });
 
-  const { progress, mark, reset, storageAvailable } = useProgress();
+  const { progress, mark, reset, storageAvailable } = useProgress('golfregels.progress.v1');
 
   const toggleTopic = (id) => {
     setSelectedTopics((prev) => {
