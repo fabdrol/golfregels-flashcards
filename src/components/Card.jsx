@@ -1,8 +1,4 @@
-import { topics } from '../data/flashcards.js';
-
-export default function Card({ card, flipped, onFlip }) {
-  const topic = topics[card.topic];
-
+export default function Card({ card, topic, flipped, onFlip }) {
   return (
     <button
       type="button"

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from './Card.jsx';
 import RelatedJargon from './RelatedJargon.jsx';
 
-export default function Study({ pool, cards, onMark, onExit, onComplete }) {
+export default function Study({ pool, cards, topics, onMark, onExit, onComplete }) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [extendedPool, setExtendedPool] = useState(pool);
@@ -86,7 +86,12 @@ export default function Study({ pool, cards, onMark, onExit, onComplete }) {
         </button>
       </div>
 
-      <Card card={currentCard} flipped={flipped} onFlip={handleFlip} />
+      <Card
+        card={currentCard}
+        topic={topics[currentCard.topic]}
+        flipped={flipped}
+        onFlip={handleFlip}
+      />
 
       <RelatedJargon card={currentCard} />
 

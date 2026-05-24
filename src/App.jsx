@@ -107,6 +107,7 @@ export default function App() {
         <Study
           pool={pool}
           cards={activeMode.cards}
+          topics={activeMode.topics}
           onMark={activeProgress.mark}
           onExit={goHome}
           onComplete={completeSession}
