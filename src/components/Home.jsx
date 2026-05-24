@@ -36,13 +36,13 @@ export default function Home({
     <div className="home">
       <h1>GVB Oefenen</h1>
 
-      <div className="mode-switch" role="tablist" aria-label="Studie-modus">
+      <div className="mode-switch" role="radiogroup" aria-label="Studie-modus">
         {modeIds.map((id) => (
           <button
             key={id}
             type="button"
-            role="tab"
-            aria-selected={mode === id}
+            role="radio"
+            aria-checked={mode === id}
             className={`mode-switch__btn ${mode === id ? 'mode-switch__btn--active' : ''}`}
             onClick={() => onModeChange(id)}
           >
